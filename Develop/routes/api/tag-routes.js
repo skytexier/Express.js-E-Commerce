@@ -32,14 +32,12 @@ router.get('/:id', (req, res) => {
     });
 
 router.post('/', (req, res) => {
-  Tag.create({
-    tag_name: req.body,
-    }).then((data) => res.status(200).json(data))
+  Tag.create(req.body).then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json(err));
   });
 
 router.put('/:id', (req, res) => {
-  Tag.update({
+  Tag.update(req.body, {
     where: {
       id: req.params.id,
     },
