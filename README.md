@@ -1,51 +1,49 @@
 # Sequelize E-commerce Backend
 
 ## Description
-This application uses Express.js to create a note-taking webpage where users can create new notes, save said notes and delete said notes. 
-The motivation behind creating this application was to better understand Express routing and how to create helper functions to handle many requests made through our routes. 
-This application aims to recreate a generic note app, however this time through a live server unlike most note applications which may be built into an OS. It works perhaps in similar ways by creating a database, reading previous entries from that database
-and ultimately writing new information to that database.
-
-The hardest part of creating this application was getting the helper functions to work together, considering this application was built with a predefined script in the background to handle note creation, deletion and saving on the webpage. Learning how to transfer that data into Express proved challenging, but thankfully a few peers and our class 
-provided a lot of useful tools/tips for creating those helper functions/functions in general.
+This application uses Express.js, Sequelize and MySql to create an e-commerce backend where users can look up products, product categories, tags for said products and the id's for all of the above. Using queries for id a user can search, update or delete from the database. Configuring the API routes was the bulk of this applications work, as we were given starter code for some routes but not all. Similarly all of the models had to be created for this application to work properly.
 
 ## Table of Contents
 - [Installation](#installation)
-- [Link to Walkthrough](#live-(HEROKU))
+- [Link to Walkthrough](#Link-to-Walkthrough)
 - [Usage/Examples](#usage)
 - [Credits](#credits)
 - [License](#license)
 
 
-## Live-(HEROKU)
-
-- [https://secret-everglades-51366.herokuapp.com/](https://secret-everglades-51366.herokuapp.com/)
-
 ## Installation
 
 The required installs for this application are listed in the package dependencies, so running `npm i` to install these packages is necessary.
-Besides that no installation is require as this server runs on Heroku or on localhost depending how you want to run it.
+Seeding the database with `node seeds` and configuring an `.env` file are necessary for this application to work. 
 
+Also since these routes only exist locally one would need to use `Insomnia` to view the routes and their associated data.
+
+## Link to Walkthrough
+- [Link to Walkthrough](https://drive.google.com/file/d/1zPm08hLzb4FY_0NYoFzSKssDZzkinOHy/view?usp=sharing)
 
 ## Usage/Examples
-Here a user can type in a title for their note and add subtext, then they can click the save icon in the top right to save said note.
-![alt text](./Assets/example1.png)
+Using Insomnia a user can GET products, categories and tags. One can also use an /:id param to search for a specific item.
 
-As pictured this server will save all notes and allow for the deletion of notes too.
-![alt text](./Assets/example2.png)
+![alt text](./Assets/getroutes.png)
+
+Post routes work but require data to be inputted in a JSON req properly.
+![alt text](./Assets/post.png)
+
+Users can also update tables based of an id query.
+![alt text](./Assets/put.png)
+
+Finally users can delete categories, products and tags using an id param too.
+![alt text](./Assets/delete.png)
 
 ## Credits
-A lot of stackoverflow for debugging.
-- [https://stackoverflow.com/](https://stackoverflow.com/)
-W3Schools on writing errors and understanding how to create error responses.
-- [https://www.w3schools.com/js/js_errors.asp](https://www.w3schools.com/js/js_errors.asp)
-Better understanding concat string methods.
-- [https://www.w3schools.com/jsref/jsref_concat_string.asp](https://www.w3schools.com/jsref/jsref_concat_string.asp)
-Geeksforgeeks to better understand res functions and Node.js in general
-- [https://www.geeksforgeeks.org/express-js-res-json-function/](https://www.geeksforgeeks.org/express-js-res-json-function/)
-- [https://www.geeksforgeeks.org/nodejs/?ref=lbp](https://www.geeksforgeeks.org/nodejs/?ref=lbp)
+Most of this assignment was pretty straight forward after just completing our second project using Sequelize, MySQL and Express.
 
-For this assignment I had to refer back to a lot of course work and some solved solutions as I missed a week of class due to a family emergency, besides this I also referred to [Ish](https://github.com/ianad389) once again for his notes on how to set up the helper functions although we ended up doing them slightly differently. 
+However I did refer to Sequelize's documentation for proper associations, including `through` options and `where` options.
+
+* [Sequelize](https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/)
+
+* [Bezkoder](https://www.bezkoder.com/sequelize-associate-many-to-many/)
+
 
 ## License
 MIT License
